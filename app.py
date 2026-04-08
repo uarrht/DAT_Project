@@ -61,6 +61,6 @@ if "GEMINI_API_KEY" in st.secrets:
                 response = model.generate_content(prompt)
                 st.info(response.text)
             except Exception as e:
-                st.error("⚠️ AI 呼叫失敗，請確認 API Key 是否設定正確。")
+                st.error(f"⚠️ AI 呼叫失敗，真實錯誤原因：{e}")
 else:
     st.warning("⚠️ 請先在 Streamlit 的 Secrets 中設定 GEMINI_API_KEY！")
