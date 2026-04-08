@@ -57,7 +57,7 @@ if "GEMINI_API_KEY" in st.secrets:
     if st.button("✨ 點擊生成今日 AI 數據總結"):
         with st.spinner("AI 正在分析最新數據..."):
             try:
-                model = genai.GenerativeModel('gemini-pro')
+                model = genai.GenerativeModel('gemini-2.5-flash')
                 response = model.generate_content(prompt)
                 st.info(response.text)
             except Exception as e:
